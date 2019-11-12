@@ -1,0 +1,133 @@
+
+#rotate1:hover {
+    /*animation-name: rot;*/
+    /*animation-duration: 3s;*/
+    animation: 1s linear 0s normal none infinite running rot;
+    -webkit-animation: 1s linear 0s normal none infinite running rot;
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen {
+
+    .logo {
+        font-size: 20px;
+        font-family: 'sonos-logoregular';
+        text-align: left;
+        background: -webkit-linear-gradient(left, #33235B, #D62229, #E97639, #792042, #33235B);
+        background: linear-gradient(left, #33235B, #D62229, #E97639, #792042, #33235B);
+        background-size: 3200px 200px;
+        margin-top: 20vh;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-animation: animate-logo;
+        -webkit-animation-delay: 0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: forwards;
+        transition: font-size 500ms ease-in-out;
+    }
+}
+
+@media only screen and (min-width: 40.063em) {
+    .logo {
+        margin-top: 3vh;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .logo {
+        margin-top: 2vh;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 90.063em) {
+    .logo {
+        margin-top: 2vh;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 120.063em) {
+    .logo {
+        margin-top: 1.5vh;
+        font-size: 25px;
+    }
+}
+
+@-webkit-keyframes animate-logo {
+    0% {
+        background-position: 0 3200px;
+    }
+    100% {
+        background-position: 3200px 0;
+    }
+}
+
+.l1 {
+    -webkit-animation-duration: 7s;
+}
+
+.l2 {
+    -webkit-animation-duration: 5s;
+}
+
+.l3 {
+    -webkit-animation-duration: 1s;
+}
+
+.l4 {
+    -webkit-animation-duration: 500ms;
+}
+
+#w {
+    animation-delay: 2s;
+    animation: method 2s infinite linear;
+    display: inline-block;
+}
+
+@keyframes method {
+    from {
+        color: black;
+        transform: rotate(0deg)
+    }
+    20% {
+        color: blue;
+        transform: rotate(72deg)
+    }
+    40% {
+        color: green;
+        transform: rotate(144deg)
+    }
+    60% {
+        color: yellow;
+        transform: rotate(216deg)
+    }
+
+    80% {
+        color: red;
+        transform: rotate(288deg)
+    }
+    to {
+        color: black;
+        transform: rotate(360deg)
+    }
+}

@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    /*font-size: 1.5rem;*/
+    font-size: calc(10px + 1vw);
+    background-color: snow;
+    color: #000;
+    font-family: "Courier New", "Nimbus Mono L" , monospace;
+}
+
+.content-container {
+    padding-top: 10px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: 950px;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-container > .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.header_wr{
+    font-family: "Courier New", fantasy;
+    background-color: #DDD7D7;
+    background-size: 50px 50px;
+    background-image:
+            linear-gradient(-45deg, transparent 52%, rgba(255,255,255,0.9) 54%, transparent 55%, transparent),
+            linear-gradient(45deg, transparent 52%, rgba(255,255,255,0.6) 54%, transparent 55%, transparent),
+            linear-gradient(-45deg, transparent 50%, rgba(0,0,0,0.1) 52%, transparent 53%, transparent),
+            linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.05) 52%, transparent 53%, transparent);
+    margin: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.section {
+    font-family: "Courier New", "Nimbus Mono L" , monospace;
+    margin: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+
+.control-points {
+    background-color: #fcf6f6;
+    margin-top: 10px;
+    border: 1px outset #d6d6b1;
+    border-radius: 5px;
+}
+
+#canvas-wrapper {
+    border-radius: 10px;
+    border: 1px outset #999975;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    padding: 10px;
+}
+
+.block{
+    background: radial-gradient(circle, white, #DDD7D7);
+    margin: 15px;
+    padding: 10px;
+    width: auto;
+    align-items: center;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+
+.panel {
+    background-color: snow;
+    border: none;
+}
+
+button{
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    font-size: large;
+    margin: 2rem;
+}
+
+button:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+}
+
+button:active {
+    background: rgb(240, 240, 240);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .4);
+}
+
+.region {
+    border-radius: 10px;
+    border: 1px outset #999975;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#controls {
+    margin-top: 110px;
+}
+
+.graph {
+    width: 500px;
+    /*height: 500px;*/
+    padding: 10px;
+    padding-top: 100px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.xInp {
+    text-decoration: none;
+}
+
+#canvas-wrapper canvas {
+    width: 100%;
+}
+
+input {
+    padding: 1.5%;
+    margin: 0.1%;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    float: right;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: black;
+    padding: 5px 10px;
+}
+
+table.main {
+    text-align: center;
+    border-collapse: initial;
+    border: 2px solid transparent;
+    margin-left: 52px;
+    float: inherit;
+}
+
+table.main>th, td {
+    padding: 10px;
+    border: 10px solid transparent;
+}
+
+.invisible {
+    display: none;
+}
+
+#responsesTable td, th{
+    border: 2px solid #9b9b7d;
+}
+
+.submit-btn {
+    border: none;
+    margin-left: 20px;
+    /*background-image: url("../../../btn-1.jpg");*/
+    /*height: 226px;*/
+    /*width: 300px;*/
+    box-shadow: none;
+}
+
+.submit-btn:hover {
+    border: none;
+    /*background-image: url("../../../aaaaaaaaaaaaaa.jpg");*/
+    /*height: 226px;*/
+    /*width: 300px;*/
+
+}
+
+.switch {
+    float: left;
+
+}
+
+#link:hover {
+    color: snow;
+}
+
+@media (max-width: 1080px) {
+    .container {
+        width: 680px;
+    }
+
+    .graph-view {
+        width: 370px;
+        height: 370px;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: 400px;
+    }
+
+    .graph-view {
+        width: 350px;
+        height: 350px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .graph-view {
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,14 @@
+.idea/
+build/
+target/
+logs/
+jars/
+saves/
+javadoc/
+config/
+test_*.xml
+*.txt
+*.rtf
+*.plantuml
+*.xml
+~$*

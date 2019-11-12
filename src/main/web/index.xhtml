@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <!--    <h:outputStylesheet library="default" name="/styles/stylesheet-dark.css"/>-->
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>lab3</title>
+    <h:outputStylesheet library="default" name="/styles/stylesheet-dark.css"/>
+    <h:outputStylesheet library="default" name="/styles/stylesheet-light.css"/>
+</h:head>
+<h:body>
+    <div class="header_wr">
+        <div class="container">
+            <div class="header">
+                <p class="info"> Наумова Н.А, P3201</p>
+                <p class="info">Вариант 201045</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="container">
+            <div class="graph" id="graph-canvas">
+                <p:panel styleClass="panel">
+                    <div id="canvas-wrapper">
+                        <c:forEach var="result" items="#{collectionBean.points}">
+                            <div data-x="#{result.x}" data-y="#{result.y}" data-hit="#{result.isCheck}"></div>
+                        </c:forEach>
+                    </div>
+                </p:panel>
+            </div>
+
+            <h:form onsubmit="return onSubmit();" id="form">
+                <div class="control-points block region" id="controls" style="margin-top: 110px;">
+                    <div id="xInput">
+                        <p class="title"><label title="X"> Значение X </label></p>
+                        <table class="main">
+                            <tr>
+                                <td><h:commandLink styleClass="xInp" value="-3" onclick="setX(-3); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="-2" onclick="setX(-2); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="-1" onclick="setX(-1); return false;"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:commandLink styleClass="xInp" value="0" onclick="setX(0); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="1" onclick="setX(1); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="2" onclick="setX(2); return false;"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:commandLink styleClass="xInp" value="3" onclick="setX(3); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="4" onclick="setX(4); return false;"/></td>
+                                <td><h:commandLink styleClass="xInp" value="5" onclick="setX(5); return false;"/></td>
+                            </tr>
+
+                        </table>
+                        <h:inputHidden id="x-hidden" value="#{pointBean.x}" validator="#{pointBean.valX}"/>
+                    </div>
+                    <div>
+                        <p class="title"><label> Значение Y </label></p>
+                        <p><p:inputText id="input_Y" required="true" value="#{pointBean.y}"
+                                        onkeyup="return onYChanged(this.value)"
+                                        autocomplete="off" placeholder="(-5; 5)">
+                            <f:validateDoubleRange minimum="-5.0" maximum="5.0"/>
+                        </p:inputText><br/></p>
+                    </div>
+                    <div>
+                        <p class="title"><label> Значение R </label></p>
+                        <p><p:inputText id="input_R" required="true" value="#{pointBean.r}"
+                                        onkeyup="return onRChanged(this.value)"
+                                        autocomplete="off" placeholder="(1; 4)">
+                            <f:validateDoubleRange minimum="1.0" maximum="4.0"/>
+                        </p:inputText>
+                            <br/></p>
+                    </div>
+
+                    <div class="block invisible" id="errors-area"
+                         style="box-shadow: none; border: 2px solid crimson"></div>
+                    <div class="block invisible" id="errors-area-canvas"
+                         style="box-shadow: none; border: 2px solid crimson"></div>
+
+                </div>
+                <h:commandButton value="check" style="margin-left: 30px"
+                                 id="submit-btn" action="#{pointBean.create()}"/>
+<!--                styleClass="submit-btn"-->
+            </h:form>
+        </div>
+
+        <h:dataTable styleClass="block" id = "responsesTable"
+                     value="#{collectionBean.points}" var="point">
+            <h:column>
+                <f:facet name="header">X</f:facet>
+                #{point.x}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Y</f:facet>
+                #{point.y}
+            </h:column>
+            <h:column>
+                <f:facet name="header">R</f:facet>
+                #{point.r}
+            </h:column>
+            <h:column>
+                <f:facet name="header">CHECK</f:facet>
+                #{point.getIsCheck()}
+            </h:column>
+        </h:dataTable>
+
+<!--        <div class="switch" onclick="aaaaaaaaaaaaaa()">-->
+<!--            <input type="checkbox" id="switch-1" name="switch-1" class="switch-check"/>-->
+<!--            <label for="switch-1">сделать красиво?</label>-->
+<!--        </div>-->
+        <h:link value="Стартовая страница" id="link" outcome="main" />
+    </div>
+
+    <h:outputScript library="default" name="js/graphpicker.js"/>
+    <h:outputScript library="default" name="js/main.js"/>
+</h:body>
+</html>
