@@ -8,7 +8,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 @ManagedBean
 @RequestScoped
@@ -47,26 +46,12 @@ public class PointBean {
             double x = Double.parseDouble(o.toString().replace(',', '.'));
 
         } catch (Exception e) {
-            FacesMessage msg =
-                    new FacesMessage("X validation failed.",
-                            "Неверная координата Х.");
+            FacesMessage msg = new FacesMessage("X validation failed.", "Неверная координата Х.");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }
     }
 
-//    public void validateX(FacesContext context, UIComponent component, Object value) {
-//        if (value == null) {
-//            return;
-//        }
-//        try {
-//            double val = Double.parseDouble(value.toString().replace(',', '.'));
-//        } catch (NumberFormatException e) {
-//            throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, (String) component
-//                    .getAttributes().getOrDefault("converterMessage", "X must be a number"), null), e);
-//        }
-//    }
-//
 
     public CollectionBean getCollectionBean() {
         return collectionBean;

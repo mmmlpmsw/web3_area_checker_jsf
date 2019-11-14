@@ -1,7 +1,13 @@
 (function () {
     "use strict";
-
     window.GraphPicker = function(wrapper, width, height) {
+
+        let hitImage = new Image();
+        let nonHitImage = new Image();
+
+        hitImage.src = 'true.png';
+        nonHitImage.src = 'false.png';
+
         let canvas = document.createElement("canvas");
         canvas.setAttribute("width", width);
         canvas.setAttribute("height", height);
@@ -133,13 +139,11 @@
                     let current = oldPoints[i];
 
                     let {x, y} = graphToNormalizedCoords(current);
-                    let image = new Image();
+
                     if (current.hit) {
-                        image.src = 'true.png';
-                        ctx.drawImage(image, x*width-60, y*height-50, 120, 100);
+                        ctx.drawImage(hitImage, x*width-60, y*height-50, 120, 100);
                     } else {
-                        image.src = 'false.png';
-                        ctx.drawImage(image, x*width-50, y*height-50, 100, 100);
+                        ctx.drawImage(nonHitImage, x*width-50, y*height-50, 100, 100);
                     }
                 }
             }

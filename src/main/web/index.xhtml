@@ -84,32 +84,35 @@
                     <div class="block invisible" id="errors-area-canvas"
                          style="box-shadow: none; border: 2px solid crimson"></div>
 
+                    <h:commandButton value="check" style="width: -webkit-fill-available;"
+                                     id="submit-btn" action="#{pointBean.create()}"/>
                 </div>
-                <h:commandButton value="check" style="margin-left: 30px"
-                                 id="submit-btn" action="#{pointBean.create()}"/>
+
 <!--                styleClass="submit-btn"-->
             </h:form>
+
+            <h:dataTable styleClass="block" id = "responsesTable" style="width: -webkit-fill-available;"
+                         value="#{collectionBean.points}" var="point">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    #{point.x}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    #{point.y}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{point.r}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">CHECK</f:facet>
+                    #{point.getIsCheck()}
+                </h:column>
+            </h:dataTable>
         </div>
 
-        <h:dataTable styleClass="block" id = "responsesTable"
-                     value="#{collectionBean.points}" var="point">
-            <h:column>
-                <f:facet name="header">X</f:facet>
-                #{point.x}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Y</f:facet>
-                #{point.y}
-            </h:column>
-            <h:column>
-                <f:facet name="header">R</f:facet>
-                #{point.r}
-            </h:column>
-            <h:column>
-                <f:facet name="header">CHECK</f:facet>
-                #{point.getIsCheck()}
-            </h:column>
-        </h:dataTable>
+
 
 <!--        <div class="switch" onclick="aaaaaaaaaaaaaa()">-->
 <!--            <input type="checkbox" id="switch-1" name="switch-1" class="switch-check"/>-->

@@ -2,7 +2,7 @@
   const MIN_Y = -5;
   const MAX_Y = 5;
   const MIN_R = 1;
-  const MAX_R = 5;
+  const MAX_R = 4;
   const x_Values = [-3, -2, -1, 0, 1, 2, 3, 4, 5];
 
   let canvasWrapper = document.getElementById("canvas-wrapper");
@@ -130,36 +130,6 @@
     return true;
   }
 
-  // window.aaaaaaaaaaaaaa = aaaaaaaaaaaaaa;
-  // function aaaaaaaaaaaaaa() {
-  //     let head = document.head,
-  //         link = document.createElement('link');
-  //     link.rel = 'stylesheet';
-  //
-  //     // проверяем значение из localStorage если dark то темная тема
-  //     if (localStorage.getItem('themeStyle') === 'dark') {
-  //       link.href = 'stylesheet-dark.css'; // ссылка на темный стиль
-  //       document.getElementById('switch-1').setAttribute('checked', true); // переключаем чекбокс в положение "темная тема"
-  //     }
-  //     // по умолчанию светлая тема
-  //     else {
-  //       link.href = 'stylesheet-light.css'; // ссылка на светлый стиль
-  //     }
-  //     head.appendChild(link); // вставляем <link rel="stylesheet" href="light|dark.css"> в шапку страницы между темаги head
-  //
-  //
-  //     // событие при переключении чекбокса
-  //     document.getElementById('switch-1').addEventListener('change', ev => {
-  //       let btn = ev.target;
-  //       // если чекбокс включен
-  //       if (btn.checked) {
-  //         link.href = 'resources/default/styles/stylesheet-dark.css'; // сключаем темную тему
-  //         localStorage.setItem('themeStyle', 'dark'); // записываем значение в localStorage
-  //       } else {
-  //         link.href = 'resources/default/styles/stylesheet-light.css'; // включаем светлую тему
-  //         localStorage.setItem('themeStyle', 'light'); // записываем значение в localStorage
-  //       }
-  //     });
-  //
-  // }
 })();
+
+
