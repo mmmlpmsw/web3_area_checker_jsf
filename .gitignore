@@ -10,5 +10,4 @@ test_*.xml
 *.txt
 *.rtf
 *.plantuml
-*.xml
 ~$*
